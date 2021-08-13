@@ -42,7 +42,7 @@ const connection = require('./database/db');
 //////////////////////////////////////////
 //Creamos servidor para la conexion////////
 //////////////////////////////////////////
-var debug = require('debug');
+var debug = require('debug')('app:server');
 var http = require('http');
 
 /**
@@ -62,7 +62,9 @@ var server = http.createServer(app);
 * Listen on provided port, on all network interfaces.
 */
 
-server.listen(port);
+server.listen(app.get('port'), () =>{
+  console.log(`server on port ${app.get('port')}`);
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
