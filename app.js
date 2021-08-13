@@ -42,7 +42,7 @@ const connection = require('./database/db');
 //////////////////////////////////////////
 //Creamos servidor para la conexion////////
 //////////////////////////////////////////
-var debug = require('debug')('app:server');
+var debug = require('debug');
 var http = require('http');
 
 /**
